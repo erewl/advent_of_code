@@ -1,4 +1,8 @@
-from days.day_one import day_one
+from days.day_one import *
 
-result = day_one('input/01_01.txt')
-print(result)
+def execute(inputPath, day_func):
+    print(day_func(inputPath))
+
+input_path = 'input'
+test_input_path = 'test_input'
+execute(f"{input_path}/01_01.txt", day_one_2)

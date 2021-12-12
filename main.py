@@ -1,4 +1,4 @@
-import days.day_two as d
+import days.day_three as d
 
 
 def execute(inputPath, day_func):
@@ -8,5 +8,7 @@ def execute(inputPath, day_func):
 input_path = 'input'
 test_input_path = 'test_input'
 
-execute(f"{input_path}/02_01.txt", d.part_one)
-execute(f"{input_path}/02_01.txt", d.part_two)
+input_file = "03_01.txt"
+
+execute(f"{input_path}/{input_file}", d.part_one)
+# execute(f"{input_path}/{input_file}", d.part_two)

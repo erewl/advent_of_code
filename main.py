@@ -11,4 +11,4 @@ test_input_path = 'test_input'
 input_file = "03_01.txt"
 
 execute(f"{input_path}/{input_file}", d.part_one)
-# execute(f"{input_path}/{input_file}", d.part_two)
+execute(f"{input_path}/{input_file}", d.part_two)

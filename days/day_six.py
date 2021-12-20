@@ -12,15 +12,15 @@ def __get_rows(file):
 
 def part_one(input_file):
     fish = __get_rows(input_file)
-    fish_count = Counter(fish).items()
+    generations = Counter(fish).items()
 
     for i in range(0, 80):
         print(f"Day {i+1}")
-        fish_count = [acc for gen, count in fish_count for acc in process_generation(gen, count)]
+        generations = [acc for gen, count in generations for acc in process_generation(gen, count)]
         # group anglerfish by generation and sum up the counts
-        fish_count = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(fish_count, key_func)]
+        generations = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(generations, key_func)]
 
-    sum_fish = sum([count for _, count in fish_count])
+    sum_fish = sum([count for _, count in generations])
     return sum_fish
 
 
@@ -33,13 +33,13 @@ def process_generation(gen, count):
   
 def part_two(input_file):
     fish = __get_rows(input_file)
-    fish_count = Counter(fish).items()
+    generations = Counter(fish).items()
 
     for i in range(0, 256):
         print(f"Day {i+1}")
-        fish_count = [new_gen for gen, count in fish_count for new_gen in process_generation(gen, count)]
+        generations = [new_gen for gen, count in generations for new_gen in process_generation(gen, count)]
         # group anglerfish by generation and sum up the counts
-        fish_count = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(fish_count, key_func)]
+        generations = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(generations, key_func)]
 
-    sum_fish = sum([count for _, count in fish_count])
+    sum_fish = sum([count for _, count in generations])
     return sum_fish

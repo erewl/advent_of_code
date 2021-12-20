@@ -22,8 +22,15 @@ class TestDrawLineMethods(unittest.TestCase):
 
         a = [9, 7]
         b = [7, 9]
-        self.assertEqual(draw_line(a,b), [(7,9), (8,8), (9,7)])
-        self.assertEqual(draw_line(b,a), [(9,7), (8,8), (7,9)])
+        self.assertEqual(draw_line(a,b), [(9,7), (8,8), (7,9)])
+        self.assertEqual(draw_line(b,a), [(7,9), (8,8), (9,7)])
+        a= [5,5] 
+        b = [8,2]
+        self.assertEqual(draw_line(a,b), [(5,5), (6,4), (7,3), (8,2)])
+
+        a= [6,4] 
+        b = [2,0]
+        self.assertEqual(draw_line(a,b), [(6,4), (5,3), (4,2), (3,1), (2,0)])
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+from collections import Counter
+
 def __get_rows(file):
     f = open(file, "r")
     def parse_row(row):
@@ -16,18 +18,17 @@ def draw_line(start, end):
     else:
         stepX = -1 if x2 < x1 else +1
         stepY = -1 if y2 < y1 else +1
-        line_points = [(i, j) for i,j in zip(range(y1, y2+stepY, stepY), range(x1, x2+stepX, stepX))]
+        line_points = [(i, j) for i,j in zip(range(x1, x2+stepX, stepX), range(y1, y2+stepY, stepY))]
     return line_points
 
 def part_one(input_file):
     rows = __get_rows(input_file)
     orthogonals = [element for [a,b] in rows if a[0]==b[0] or a[1]==b[1] for element in draw_line(a,b)]
-    filtered = [element for element in orthogonals if orthogonals.count(element) >= 2]
+    filtered = [item for item, count in Counter(orthogonals).items() if count >= 2]
     return len(set(filtered))
-
 
 def part_two(input_file):
     rows = __get_rows(input_file)
     orthogonals = [element for [a,b] in rows for element in draw_line(a,b)]
-    filtered = [element for element in orthogonals if orthogonals.count(element) >= 2]
+    filtered = [(item, count) for item, count in Counter(orthogonals).items() if count >= 2 ]
     return len(set(filtered))

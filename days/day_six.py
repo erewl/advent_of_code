@@ -1,4 +1,3 @@
-import numpy as np
 from collections import Counter
 import itertools  
 
@@ -8,7 +7,7 @@ value_func = lambda x: x[1]
 def __get_rows(file):
     f = open(file, "r")
     elements = [int(element) for element in f.read().replace('\n', '').replace(' ', '').split(',')]
-    return np.array(elements)
+    return elements
 
 def part_one(input_file):
     fish = __get_rows(input_file)

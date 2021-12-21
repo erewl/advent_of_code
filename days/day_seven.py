@@ -1,5 +1,4 @@
 import numpy as np
-import math
 
 def __get_rows(file):
     f = open(file, "r")

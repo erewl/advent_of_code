@@ -26,5 +26,3 @@ def part_two(input_file):
     minmax = 167
     fuel = np.min([get_needed_fuel(rows, pos) for pos in range(middle-minmax, middle+minmax)])
     return fuel
-
-    # 105461913

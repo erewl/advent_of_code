@@ -1,8 +1,8 @@
 from collections import Counter
 import itertools  
 
-key_func = lambda x: x[0]
-value_func = lambda x: x[1]
+extract_gen = lambda x: x[0]
+extract_counts = lambda x: x[1]
 
 def __get_rows(file):
     f = open(file, "r")
@@ -17,7 +17,7 @@ def part_one(input_file):
         print(f"Day {i+1}")
         generations = [acc for gen, count in generations for acc in process_generation(gen, count)]
         # group anglerfish by generation and sum up the counts
-        generations = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(generations, key_func)]
+        generations = [(key, sum(map(extract_counts, groups))) for key, groups in itertools.groupby(generations, extract_gen)]
 
     sum_fish = sum([count for _, count in generations])
     return sum_fish
@@ -38,7 +38,7 @@ def part_two(input_file):
         print(f"Day {i+1}")
         generations = [new_gen for gen, count in generations for new_gen in process_generation(gen, count)]
         # group anglerfish by generation and sum up the counts
-        generations = [(key, sum(map(value_func, groups))) for key, groups in itertools.groupby(generations, key_func)]
+        generations = [(key, sum(map(extract_counts, groups))) for key, groups in itertools.groupby(generations, extract_gen)]
 
     sum_fish = sum([count for _, count in generations])
     return sum_fish

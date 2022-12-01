@@ -1,18 +1,21 @@
 from functools import reduce
+from typing import List
 
-class DayOne():
+from days.day_interface import DayBaseClass
+
+class DayOne(DayBaseClass):
 
     def part_one(self, input_file):
-        input = self.parse_instructions(input_file)
+        input = self.parse_input(input_file)
         sums = max([sum(i) for i in input])
         return sums
 
     def part_two(self, input_file):
-        input = self.parse_instructions(input_file)
+        input = self.parse_input(input_file)
         sorted_sums = sorted([sum(i) for i in input])
         return sum(sorted_sums[-3:])
 
-    def parse_instructions(self, input_file):
+    def parse_input(self, input_file)-> List[List[int]]:
         def parse_input(acc, curr):
             if curr == '':
                 acc.append([])

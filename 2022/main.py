@@ -1,12 +1,14 @@
 from days.day_01 import DayOne
 from days.day_02 import DayTwo
+from days.day_03 import DayThree
 
 
 def main():
-    day_number = 2
+    day_number = 3
     days = [
         lambda: DayOne(),
-        lambda: DayTwo()
+        lambda: DayTwo(),
+        lambda: DayThree()
     ]
 
     day = days[day_number-1]()

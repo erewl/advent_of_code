@@ -1,3 +1,4 @@
+from posixpath import split
 from typing import Callable, Generic, TypeVar
 
 # Generic since, the input format can vary from day to day
@@ -12,4 +13,6 @@ class DayBaseClass:
         pass
 
     def parse_input(self, input_file: str)-> Generic[T]:
-        pass
+        with open(input_file) as f:
+            lines = f.read().split('\n')
+            return lines

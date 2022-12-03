@@ -16,13 +16,23 @@ wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
 ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw'''
 
-    def test_calculate_total_score_according_to_plan(self):
+    def test_find_common_item_between_two_compartments(self):
         with open(self.test_input_file_path, "w") as f:
             f.write(self.test_input)
 
         d = DayThree()
         actual = d.part_one(self.test_input_file_path)
         self.assertEqual(actual, 157)
+
+        os.remove(self.test_input_file_path)
+
+    def test_find_common_item_between_three_rucksacks(self):
+        with open(self.test_input_file_path, "w") as f:
+            f.write(self.test_input)
+
+        d = DayThree()
+        actual = d.part_two(self.test_input_file_path)
+        self.assertEqual(actual, 70)
 
         os.remove(self.test_input_file_path)
 

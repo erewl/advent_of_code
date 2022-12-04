@@ -22,6 +22,6 @@ class DayFour(DayBaseClass):
                 return [f[0]]
             return list(range(f[0], f[1]+1))
 
-        return [[create_range(item) for item in pair] for pair in pairs]
+        return [[create_range(left), create_range(right)] for left, right in pairs]
          
         

@@ -28,3 +28,18 @@
 
 <br />
 
+
+## Execute Code
+
+1. Set `day_number` in `main.py` to the day you want to execute
+2. Run `python -m main`
+   
+## Run tests
+
+Run tests for a specific day with
+
+`python -m unittest test/*_04.py # change number` 
+
+or run all tests with 
+
+`python -m unittest discover -v`

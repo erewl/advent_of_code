@@ -2,15 +2,17 @@ from days.day_01 import DayOne
 from days.day_02 import DayTwo
 from days.day_03 import DayThree
 from days.day_04 import DayFour
+from days.day_05 import DayFive
 
 
 def main():
-    day_number = 4
+    day_number = 5
     days = [
         DayOne(),
         DayTwo(),
         DayThree(),
         DayFour(),
+        DayFive(),
     ]
 
     day = days[day_number-1]

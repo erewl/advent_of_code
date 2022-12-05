@@ -19,7 +19,7 @@ move 3 from 1 to 3
 move 2 from 2 to 1
 move 1 from 1 to 2'''
 
-    def test_1(self):
+    def test_moving_instructions_with_singular_crate_movement(self):
         with open(self.test_input_file_path, "w") as f:
             f.write(self.test_input)
 
@@ -29,7 +29,7 @@ move 1 from 1 to 2'''
 
         os.remove(self.test_input_file_path)
 
-    def test_2(self):
+    def test_moving_instructions_with_crate_stack_movement(self):
         with open(self.test_input_file_path, "w") as f:
             f.write(self.test_input)
 

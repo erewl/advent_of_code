@@ -1,5 +1,4 @@
 from functools import reduce
-from re import S
 from typing import List
 from days.day_interface import DayBaseClass
 
@@ -62,7 +61,7 @@ class DayFive(DayBaseClass):
             stack_numbers = [
                 int(stack_number) for stack_number in stack_numbers if not stack_number == '']
 
-            crates_arrangement = [i.replace(4*' ', ' ')  # remove space-tabulated gaps for easier handling
+            crates_arrangement = [i.replace(4*' ', ' ')  # replace space-tabulated gaps by singular spaces for easier handling
                                   .replace('[', '')
                                   .replace(']', '').split(' ') for i in crates_arrangement]
 

@@ -10,7 +10,7 @@ class DaySix(DayBaseClass):
                 return index
 
     def __create_batched_signal_with_sliding_window(self, signal: str, batch_size: int, sliding_window: int) -> List[str]:
-        return [signal[i:i+batch_size] for i in range(0, len(signal)-batch_size, sliding_window)]
+        return [signal[i:i+batch_size] for i in range(0, len(signal)-batch_size+sliding_window, sliding_window)]
 
     def part_one(self, input_file: str) -> int:
         signal = self.parse_input(input_file)

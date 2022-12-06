@@ -3,16 +3,18 @@ from days.day_02 import DayTwo
 from days.day_03 import DayThree
 from days.day_04 import DayFour
 from days.day_05 import DayFive
+from days.day_06 import DaySix
 
 
 def main():
-    day_number = 5
+    day_number = 6
     days = [
         DayOne(),
         DayTwo(),
         DayThree(),
         DayFour(),
         DayFive(),
+        DaySix(),
     ]
 
     day = days[day_number-1]

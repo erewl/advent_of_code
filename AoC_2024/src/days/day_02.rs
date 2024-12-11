@@ -36,6 +36,51 @@ pub fn pt_01(input_path: &str) -> i32 {
 }
 
 pub fn pt_02(input_path: &str) -> i32 {
+    let raw_input = fs::read_to_string(input_path).expect("Should have been able to read the file");
+    let parts: Vec<&str> = raw_input.lines().collect();
+
     let mut result = 0;
+    for part in parts {
+        let row: Vec<i32> = part
+            .split_whitespace()
+            .filter_map(|s| s.parse::<i32>().ok())
+            .collect();
+
+        let at_least = 1;
+        let at_most = 3;
+
+        let differences: Vec<i32> = row
+            .windows(2)
+            .map(|pair| {
+                let diff = pair[1] - pair[0];
+                diff
+            })
+            .collect();
+
+        if differences
+            .iter()
+            .filter(|a| a.abs() < at_least || a.abs() > at_most)
+            .count()
+            >= 0
+        {
+
+            let diffences_of_differences: Vec<i32> = differences
+                .windows(2)
+                .map(|pair| {
+                    let diff = pair[0] - pair[1];
+                    diff
+                })
+                .collect();
+
+            println!("{:?} {:?} {:?}", row, differences, diffences_of_differences);
+
+            // if diffences_of_differences <= 1 {
+            //     result += 1;
+            // }
+        }
+        else {
+            result += 1
+        }
+    }
     return result;
 }
